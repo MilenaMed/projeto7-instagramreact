@@ -1,17 +1,27 @@
 import React from "react";
 
 function Usuario(){
+  const [nomeUsuário, setNome] = React.useState("Catana")
+  const [UsuarioImg, setImg] = React.useState("assets/img/catanacomics.svg")
+
     function Editar(){
-        prompt("Qual o nome")
+      let novoNome = prompt("Qual o novo nome?")
+      setNome(novoNome)
     }
+
+    function EditarImg(){
+      let novaImg = prompt("Insira a URL da imagem")
+      setImg(novaImg)
+    }
+    
     return(
-        <div class="usuario">
-        <img src="assets/img/catanacomics.svg" />
+        <div data-test="user" class="usuario" >
+        <img data-test="profile-image" onClick={EditarImg} src={UsuarioImg} />
         <div class="texto">
           <strong>catanacomics</strong>
-          <span>
-            Catana
-            <ion-icon onClick={Editar} name="pencil"></ion-icon>
+          <span data-test="name">
+          {nomeUsuário}
+            <ion-icon data-test="edit-name" onClick={Editar} name="pencil"></ion-icon>
           </span>
         </div>
       </div>

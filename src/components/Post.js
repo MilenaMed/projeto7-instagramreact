@@ -1,6 +1,9 @@
 import React from "react";
 
 function Post(){
+
+  const imagem = ["meowed","barked"]
+
     function Marcar(){
         alert("marcou")
     }
@@ -13,7 +16,7 @@ function Post(){
         <div class="post">
             <div class="topo">
               <div class="usuario">
-                <img src="assets/img/meowed.svg" />
+                <img data-test="like-post" src= {`assets/img/${imagem[1]}.svg`}/>
                 meowed
               </div>
               <div class="acoes">
