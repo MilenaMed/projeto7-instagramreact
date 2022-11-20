@@ -68,7 +68,7 @@ function Post() {
         <div class="curtidas">
           <img src="assets/img/respondeai.svg" />
           <div class="texto">
-            Curtido por <strong>respondeai</strong> e <strong>outras {curtidasCount} pessoas</strong>
+            Curtido por <strong>respondeai</strong> e <strong data-test="likes-number"> outras {curtidasCount} pessoas</strong>
           </div>
         </div>
       </div>
