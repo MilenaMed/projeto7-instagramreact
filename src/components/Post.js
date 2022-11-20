@@ -3,6 +3,7 @@ import React from "react";
 function Post(){
 
   const imagem = ["meowed","barked"]
+  const [curtidasCount, setCurtidasCount] = React.useState(101523);
 
     function Marcar(){
         alert("marcou")
@@ -10,13 +11,14 @@ function Post(){
 
     function Curtir(){
         alert("curtiu")
+        setCurtidasCount(curtidasCount + 1)
     }
 
     return(
-        <div class="post">
+        <div data-test="post" class="post">
             <div class="topo">
               <div class="usuario">
-                <img data-test="like-post" src= {`assets/img/${imagem[1]}.svg`}/>
+                <img src= {`assets/img/${imagem[1]}.svg`}/>
                 meowed
               </div>
               <div class="acoes">
@@ -25,25 +27,25 @@ function Post(){
             </div>
 
             <div class="conteudo">
-              <img onClick={Curtir} src="assets/img/gato-telefone.svg" />
+              <img data-test="post-image" onClick={Curtir} src="assets/img/gato-telefone.svg" />
             </div>
 
             <div class="fundo">
               <div class="acoes">
                 <div>
-                  <ion-icon onClick={Curtir} name="heart-outline"></ion-icon>
+                  <ion-icon data-test="like-post" onClick={Curtir} name="heart-outline"></ion-icon>
                   <ion-icon name="chatbubble-outline"></ion-icon>
                   <ion-icon name="paper-plane-outline"></ion-icon>
                 </div>
                 <div>
-                  <ion-icon onClick={Marcar} name="bookmark-outline"></ion-icon>
+                  <ion-icon data-test="save-post" onClick={Marcar} name="bookmark-outline"></ion-icon>
                 </div>
               </div>
 
               <div class="curtidas">
                 <img src="assets/img/respondeai.svg" />
                 <div class="texto">
-                  Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                  Curtido por <strong>respondeai</strong> e <strong>outras {curtidasCount} pessoas</strong>
                 </div>
               </div>
             </div>
