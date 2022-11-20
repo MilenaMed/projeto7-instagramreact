@@ -249,6 +249,14 @@ body {
   padding: 20px 0 14px;
 }
 
+.vermelho{
+  color: #ff4b4b;
+}
+
+.preto{
+  color: black;
+}
+
 .sidebar .sugestoes .sugestao {
   display: flex;
   justify-content: space-between;
