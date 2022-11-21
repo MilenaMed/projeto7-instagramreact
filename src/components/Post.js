@@ -1,9 +1,8 @@
 import React from "react";
 
-function Post() {
+function Post(props) {
 
-  const imagem = ["meowed", "barked"]
-  const [curtidasCount, setCurtidasCount] = React.useState(101523);
+  const [curtidasCount, setCurtidasCount] = React.useState(props.curtidas);
   const [Clicksalvou, setSalvou] = React.useState("bookmark-outline");
   const [ClickLike, setLiked] = React.useState("heart-outline");
   const [MudarCor, setCor] = React.useState("black");
@@ -41,8 +40,8 @@ function Post() {
     <div data-test="post" class="post">
       <div class="topo">
         <div class="usuario">
-          <img src={`assets/img/${imagem[1]}.svg`} />
-          meowed
+          <img src={`assets/img/${props.imagemPerfil}.svg`} />
+          {props.nomeUsuário}
         </div>
         <div class="acoes">
           <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -50,7 +49,7 @@ function Post() {
       </div>
 
       <div class="conteudo">
-        <img data-test="post-image" onClick={CurtirImag} src="assets/img/gato-telefone.svg" />
+        <img data-test="post-image" onDoubleClick={CurtirImag} src={props.postagem} />
       </div>
 
       <div class="fundo">
@@ -66,9 +65,9 @@ function Post() {
         </div>
 
         <div class="curtidas">
-          <img src="assets/img/respondeai.svg" />
+          <img src={`assets/img/${props.imagemPerfilCurtiu}.svg`}/>
           <div class="texto">
-            Curtido por <strong>respondeai</strong> e <strong data-test="likes-number"> outras {curtidasCount} pessoas</strong>
+            Curtido por <strong>{props.nomePerfilCurtiu}</strong> e <strong data-test="likes-number"> outras {curtidasCount} pessoas</strong>
           </div>
         </div>
       </div>

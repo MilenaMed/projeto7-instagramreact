@@ -1,13 +1,13 @@
 import React from "react";
 
-function Storie(){
+function Storie(props){
     return(
         <div class="story">
             <div class="imagem">
-              <img src="assets/img/9gag.svg" />
+              <img src={`assets/img/${props.fotoStorie}.svg`}/>
             </div>
             <div class="usuario">
-              9gag
+              {props.nomeStorie}
             </div>
           </div>
     )

@@ -6,14 +6,14 @@ function Usuario(){
 
     function Editar(){
       let novoNome = prompt("Qual o novo nome?")
-      if (novoNome !== ""){
+      if (novoNome !== "" && novoNome !== " "){
       setNome(novoNome)
       } else {}
     }
 
     function EditarImg(){
       let novaImg = prompt("Insira a URL da imagem")
-      if (novaImg !== ""){
+      if (novaImg !== "" &&  novaImg !== " "){
       setImg(novaImg);}
       else{}
     }
